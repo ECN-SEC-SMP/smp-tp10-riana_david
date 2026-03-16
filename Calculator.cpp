@@ -7,13 +7,14 @@
 
 
 int Calculator::factorielle(int a) {
-	int fact = 1;
-	int i = 0;
-	while (i <= a) {
-		fact *= i;
-		i++;
+	if (a == 0)
+		return 1;
+
+	int acc = 1;
+	for (int i = 1; i <= a; i++) {
+		acc *= i;
 	}
-	return fact;
+	return acc;
 }
 
 int Calculator::add(int a, int b) {

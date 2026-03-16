@@ -59,7 +59,7 @@ add_executable(mytest.out
 
 add_executable(calculatorTest.out
         calculatorTest.cpp
-        calculator.cpp
+        Calculator.cpp
 )
 
 # Ajout d'options de compilation spécifiques à cette cible :
