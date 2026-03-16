@@ -4,8 +4,6 @@
 
 #include "Calculator.h"
 #include <gtest/gtest.h>
-#include <iostream>
-using namespace std;
 
 TEST(CalculatorFactorialTest, ZeroValue) {
     Calculator calc;
@@ -21,4 +19,9 @@ TEST(CalculatorFactorialTest, StandardValues) {
 TEST(CalculatorFactorialTest, divisionWith2Double) {
     Calculator calc;
     EXPECT_NEAR(2.333, calc.div(7, 3), 0.001);
+}
+
+TEST(CalculatorFactorialTest, divisionWithZero) {
+    Calculator calc;
+    ASSERT_EXIT(calc.div(7, 0), ::testing::ExitedWithCode(255), "Error: Division by 0 not possible");
 }

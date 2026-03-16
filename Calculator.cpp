@@ -26,6 +26,11 @@ int Calculator::sub(int a, int b) {
 }
 
 double Calculator::div(double a, double b) {
+	if (b == 0) {
+		std::cerr << "Error: Division by 0 not possible" << std::endl;
+		exit(255);
+	}
+
 	return a / b;
 }
 
