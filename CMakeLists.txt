@@ -57,12 +57,18 @@ add_executable(mytest.out
     mytest.cpp
 )
 
+add_executable(calculatorTest.out
+        calculatorTest.cpp
+        calculator.cpp
+)
+
 # Ajout d'options de compilation spécifiques à cette cible :
 # -Wall   : active la plupart des warnings
 # -Wextra : warnings supplémentaires
 # -pthread: nécessaire pour GoogleTest
 # -g      : ajoute les symboles de debug
 target_compile_options(mytest.out PRIVATE -Wall -Wextra -pthread -g)
+target_compile_options(calculatorTest.out PRIVATE -Wall -Wextra -pthread -g)
 
 # Liaison de l'exécutable avec GoogleTest.
 # GTest::gtest_main fournit :
@@ -70,6 +76,10 @@ target_compile_options(mytest.out PRIVATE -Wall -Wextra -pthread -g)
 #   - un main() déjà implémenté qui lance les tests
 target_link_libraries(mytest.out
     GTest::gtest_main
+)
+
+target_link_libraries(calculatorTest.out
+        GTest::gtest_main
 )
 
 # Permet d'utiliser les fonctions spécifiques à GoogleTest dans CMake.
