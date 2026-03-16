@@ -17,3 +17,8 @@ TEST(CalculatorFactorialTest, StandardValues) {
     EXPECT_EQ(1, calc.factorielle(1));
     EXPECT_EQ(120, calc.factorielle(5));
 }
+
+TEST(CalculatorFactorialTest, divisionWith2Double) {
+    Calculator calc;
+    EXPECT_NEAR(2.333, calc.div(7, 3), 0.001);
+}
